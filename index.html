@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form-item label {
+            display: inline-block;
+            width: 200px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add Profile</h1>
+    <div class="form-item">
+        <label>First Name: </label>
+        <input type="text" name="first_name" id="first_name">
+    </div>
+    <div class="form-item">
+        <label>Last Name: </label>
+        <input type="text" name="first_name" id="last_name">
+    </div>
+    <div class="form-item">
+        <label>Email: </label>
+        <input type="text" name="first_name" id="email">
+    </div>
+    <div class="form-item">
+        <label>Age: </label>
+        <input type="text" name="first_name" id="age">
+    </div>
+    <div>
+        <button onclick="addProfile()">Submit</button>
+        <button onclick="showProfiles()">Show Profiles</button>
+    </div>
+    
+
+    <script>
+
+        const url = "http://localhost:9000";
+        function addProfile(){
+            const firstName = document.getElementById("first_name");
+            const lastName = document.getElementById("last_name");
+            const email = document.getElementById("email");
+            const age = document.getElementById("age");
+
+            const body = {
+                firstName: firstName.value,
+                lastName: lastName.value,
+                email: email.value,
+                age: age.value
+            }
+
+            fetch(`${url}/add-profile`,{
+                method: "post",
+                body: JSON.stringify(body),
+                headers: {
+                    "Content-Type" : "application/json"
+                }
+            })
+            .then(() => {
+                firstName.value = "";
+                lastName.value = "";
+                email.value = "";
+                age.value = "";
+            })
+            
+        }
+
+        function showProfiles(){
+            window.location.href += "profiles";
+        }
+    </script>
+</body>
+</html>

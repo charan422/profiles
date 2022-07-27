@@ -1,0 +1,23 @@
+{
+    "description": "Profile Info",
+    "list": [
+        {
+            "first_name": "siva sai charan",
+            "last_name": "kondapi",
+            "age": 30,
+            "email": "charankondapi@gmail.com"
+        },
+        {
+            "firstName": "siva sai charan",
+            "lastName": "kondapi",
+            "email": "charankondapi@gmail.com",
+            "age": "30"
+        },
+        {
+            "firstName": "madhuri rangoju",
+            "lastName": "kondapi",
+            "email": "madhurirangoju@gmail.com",
+            "age": "26"
+        }
+    ]
+}
