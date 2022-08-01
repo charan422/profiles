@@ -32,4 +32,4 @@ app.get('/profiles', (req,res) => {
     res.end(file);
 });
 
-app.listen(9000)
+app.listen(9000);
