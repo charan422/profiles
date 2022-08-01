@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: profiles
+  labels:
+    app: profiles
+spec:
+  containers:
+    - name: profiles
+      image: charankondapi/profiles
+      ports:
+        - containerPort: 9000
